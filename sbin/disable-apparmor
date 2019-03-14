@@ -1,0 +1,28 @@
+#!/bin/bash
+make_links(){
+    for srv in `cat /usr/share/disable-apparmor/services`; do 
+	if [ ! -L /etc/apparmor.d/disable/${srv} ]; then
+    	    ln -s /etc/apparmor.d/${srv} /etc/apparmor.d/disable/
+	fi
+    done
+}
+remove_links(){
+    for srv in `cat $1`; do 
+        rm -f /etc/apparmor.d/disable/${srv}
+    done
+}
+
+if [ "z$1" = "zinstall" ]; then
+    make_links
+fi
+
+
+if [ "z$1" = "zpurge" ]; then
+    if [ ! -z "$2" ]; then
+	remove_links $2
+    else
+	remove_links /usr/share/disable-apparmor/services
+    fi
+fi
+
+
