@@ -1,0 +1,12 @@
+Source: disable-apparmor
+Section: admin
+Priority: optional
+Maintainer: M.Angel <m.angel.juan@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 4.1.2
+
+Package: disable-apparmor
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Disable some apparmor services
+ Disable some apparmor services
