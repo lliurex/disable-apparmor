@@ -1,3 +1,9 @@
+disable-apparmor (0.4) focal; urgency=medium
+
+  * Focal release
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 01 Jun 2021 09:47:14 +0200
+
 disable-apparmor (0.4) bionic; urgency=medium
 
   * Bionic release

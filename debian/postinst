@@ -21,9 +21,8 @@ case "$1" in
     configure)
 	    /usr/sbin/disable-apparmor install
 	if aa-status --enabled 2>/dev/null; then
-	    service apparmor stop
-	    service apparmor teardown
-	    service apparmor start
+	    systemctl stop apparmor
+	    systemctl start apparmor
 	fi
     ;;
 
